@@ -2,6 +2,18 @@
 
 Use a Raspberry Pi 3B+ to create a cheap Console Server for accessing network gear.
 
+## Requirements
+
+| Requirement | Met? |
+| --- | --- |
+| Total cost under $100. | ??? |
+| Connects to four network devices. | ??? |
+| Works for Cisco and Juniper.| ??? |
+| Individual users for different network equipment. | ??? |
+| Logs all output for easy capture of configs. | ??? |
+| Acts as wifi access point to work in different environments. | ??? |
+| Accessible from homelab network. | ??? |
+
 ## Manual Steps
 
 ## BOM
