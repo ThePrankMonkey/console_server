@@ -21,7 +21,10 @@ Use a Raspberry Pi 3B+ to create a cheap Console Server for accessing network ge
 | Item | Cost | Count | Total |
 | --- | --- | --- | --- |
 | Raspberry Pi 3B+ | $35 | 1 | $35 |
-| | | __Total__ | $35 |
+| 16GB MicroSD | $5 | 1 | $5 |
+| Raspberry Pi Case | $8 | 1 | $8 |
+| USB-A<>RJ45 Console Cable| $9 | 4 | $36 |
+| | | __Total__ | $84 |
 
 ## Wiring
 
