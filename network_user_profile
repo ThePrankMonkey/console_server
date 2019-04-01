@@ -12,7 +12,7 @@ function list_netgear(){
     echo "~~~~~~~~"
     echo
     echo "Available Network Gear:"
-    gear_arr=($(  alias | grep "netgear" | awk -s '{print $2}' | awk -F "=" -s '{print $1}'  ))
+    gear_arr=($(  alias | grep "netgear" | awk '{print $2}' | awk -F "=" '{print $1}'  ))
     for i in "${gear_arr[@]}"; do
         echo -e "\t$i"
     done
