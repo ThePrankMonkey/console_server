@@ -74,7 +74,7 @@ sudo systemctl enable dnsmasq
 Create network_user account:
 
 ```bash
-sudo useradd -m network_user
+sudo useradd -s /bin/bash -m network_user
 sudo passwd network_user
 ```
 
