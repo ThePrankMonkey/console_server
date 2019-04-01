@@ -85,7 +85,7 @@ Add the following line with `visudo`:
 network_user ALL=(ALL) ALL
 ```
 
-
+Copy the contents of `newuser.sh` into network_user's `.bash_profile`.
 
 ## BOM
 
