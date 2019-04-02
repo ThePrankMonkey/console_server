@@ -2,6 +2,17 @@
 
 Use a Raspberry Pi 3B+ to create a cheap Console Server for accessing network gear.
 
+- [console_server](#consoleserver)
+  - [Requirements](#requirements)
+  - [Manual Steps](#manual-steps)
+  - [BOM](#bom)
+  - [Wiring](#wiring)
+  - [Custom Case](#custom-case)
+  - [Image](#image)
+  - [Issues](#issues)
+    - [Binding same dev path to device on reboot](#binding-same-dev-path-to-device-on-reboot)
+  - [References](#references)
+
 ## Requirements
 
 | Requirement | Met? |
@@ -20,7 +31,7 @@ Complete the Raspbian config and fully update.
 
 ```bash
 # Install packages
-sudo apt install screen hostpad dnsmasq -y
+sudo apt install screen hostapd dnsmasq -y
 ```
 
 Set up `/etc/network/infaces/`:
@@ -74,8 +85,9 @@ sudo systemctl enable dnsmasq
 Create network_user account:
 
 ```bash
+PASSWORD='rootroot'
 sudo useradd -s /bin/bash -m network_user
-sudo passwd network_user
+echo -e "$PASSWORD\n$PASSWORD" | sudo passwd network_user
 ```
 
 Add the following line with `visudo`:
@@ -83,6 +95,24 @@ Add the following line with `visudo`:
 ```bash
 # User privilege specification
 network_user ALL=(ALL) ALL
+```
+
+Collect the idVendor, idProduct, and serial properties of the console cables. With one cable plugged in at a time, run:
+
+```bash
+#NOTE /dev/ttyUSB0 and head -4 may need to change if your have different hardware.
+udevadm info -a -p  $(udevadm info -q path -n /dev/ttyUSB0) | grep -E '(idProduct|idVendor|serial)' | head -4
+```
+
+Use the previous values to label each cable.
+
+Create `/etc/udev/rules.d/99-usb-serial.rules` with the following information:
+
+```text
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="REPLACE_ME1", SYMLINK+="console_cable0"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="REPLACE_ME2", SYMLINK+="console_cable1"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="REPLACE_ME3", SYMLINK+="console_cable2"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="REPLACE_ME4", SYMLINK+="console_cable3"
 ```
 
 Copy the contents of `newuser.sh` into network_user's `.bash_profile`.
@@ -111,6 +141,12 @@ _TODO:_ Model a custom case for the raspberry pi to be printed.
 _TODO_: Create a premade image to burn to SD-Cards.
 
 ## Issues
+
+### Binding same dev path to device on reboot
+
+Using `usb-devices`, I can see the Serial Numbers for my usb console cables.
+
+Should be able to configure udevadm rules via [this](https://unix.stackexchange.com/questions/66901/how-to-bind-usb-device-under-a-static-name).
 
 ## References
 
