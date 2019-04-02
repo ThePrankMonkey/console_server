@@ -51,6 +51,7 @@ Set up `/etc/network/interfaces`:
 Set up `/etc/hostapd/hostapd.conf`:
 
 > ```bash
+> # Change these values
 > interface=wlan0
 > ssid=Console Server
 > wpa_passphrase=rootroot
@@ -60,13 +61,15 @@ Set up `/etc/hostapd/hostapd.conf`:
 Set up `/etc/dnsmasq.conf`
 
 > ```bash
+> # Change these values
 > interface=wlan0
 > listen-address=172.16.1.1
+> dhcp-range=172.16.1.21,172.16.1.24,12h
+> # Add these values
 > bind-interfaces
 > server=8.8.8.8
 > domain-needed
 > bogus-priv
-> dhcp-range=172.16.1.21,172.16.1.24,12h
 > ```
 
 Set up '/etc/sysctl.conf`: MIGHT NOT BE NEEDED
