@@ -1,10 +1,10 @@
 # Script for Login
 
 # Aliases must start with 'netgear_'
-alias netgear_FRW_TOP='screen -L ~/frw_top.log /dev/ttyUSB0 9600'
-alias netgear_FRW_BOT='screen -L ~/frw_bot.log /dev/ttyUSB1 9600'
-alias netgear_SWT_TOP='screen -L ~/swt_top.log /dev/ttyUSB2 9600'
-alias netgear_SWT_BOT='screen -L ~/swt_bot.log /dev/ttyUSB3 9600'
+alias netgear_FRW_TOP='screen -L ~/frw_top.log /dev/console_cable0 9600'
+alias netgear_FRW_BOT='screen -L ~/frw_bot.log /dev/console_cable1 9600'
+alias netgear_SWT_TOP='screen -L ~/swt_top.log /dev/console_cable2 9600'
+alias netgear_SWT_BOT='screen -L ~/swt_bot.log /dev/console_cable3 9600'
 
 function list_netgear(){
     echo "~~~~~~~~"
