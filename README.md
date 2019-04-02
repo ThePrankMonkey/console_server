@@ -34,7 +34,7 @@ Complete the Raspbian config and fully update.
 sudo apt install screen hostapd dnsmasq -y
 ```
 
-Set up `/etc/network/infaces/`:
+Set up `/etc/network/interfaces`:
 
 > ```bash
 > auto eth0
