@@ -124,11 +124,11 @@ Copy the contents of `newuser.sh` into network_user's `.bash_profile`.
 
 | Item | Cost | Count | Total |
 | --- | --- | --- | --- |
-| Raspberry Pi 3B+ | $35 | 1 | $35 |
-| 16GB MicroSD | $5 | 1 | $5 |
-| Raspberry Pi Case | $8 | 1 | $8 |
-| USB-A<>RJ45 Console Cable| $9 | 4 | $36 |
-| 4-port USB Hub | $10 | 1 | $10 |
+| [Raspberry Pi 3B+](https://www.amazon.com/ELEMENT-Element14-Raspberry-Pi-Motherboard/dp/B07BDR5PDW/) | $35 | 1 | $35 |
+| [16GB MicroSD](https://www.amazon.com/Sandisk-Ultra-Micro-UHS-I-Adapter/dp/B073K14CVB/) | $5 | 1 | $5 |
+| [Raspberry Pi Case](https://www.amazon.com/Official-Raspberry-Pi-Case-White/dp/B01CCPKCSK/) | $8 | 1 | $8 |
+| [USB-A<>RJ45 Console Cable](https://www.amazon.com/Asunflower-Serial-Console-Rollover-Routers/dp/B00KMRVGFO/) | $9 | 4 | $36 |
+| [4-port USB Hub](https://www.amazon.com/TP-Link-4-Port-Splitter-Foldable-UH400/) | $10 | 1 | $10 |
 | | | __Total__ | $94 |
 
 ## Wiring
